@@ -1,0 +1,14 @@
+[package]
+name = "xrt-lp-rewards"
+version = "0.1.0"
+description = "XRT liquidity pool rewards calculator."
+authors = ["Alexander Krupenkin <mail@akru.me>"]
+edition = "2018"
+
+[dependencies]
+structopt = "0.3.15"
+sp-runtime = { git = "https://github.com/paritytech/substrate" }
+pallet-staking-reward-curve = { git = "https://github.com/paritytech/substrate" }
+
+[build-dependencies]
+structopt = "0.3.15"
