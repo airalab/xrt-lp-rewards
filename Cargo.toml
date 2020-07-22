@@ -5,6 +5,13 @@ description = "XRT liquidity pool rewards calculator."
 authors = ["Alexander Krupenkin <mail@akru.me>"]
 edition = "2018"
 
+[[bin]]
+name = "lp-rewards"
+path = "bin/main.rs"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
 [dependencies]
 structopt = "0.3.15"
 sp-runtime = { git = "https://github.com/paritytech/substrate" }
