@@ -8,19 +8,21 @@ edition = "2018"
 [[bin]]
 name = "lp-rewards"
 path = "bin/main.rs"
+required-features = ["cli"]
 
 [lib]
 crate-type = ["cdylib", "rlib"]
 
 [dependencies]
-structopt = "0.3.15"
+structopt = { version = "0.3.15", optional = true }
 sp-runtime = { git = "https://github.com/paritytech/substrate" }
 wasm-bindgen = { version = "0.2.57", optional = true }
 pallet-staking-reward-curve = { git = "https://github.com/paritytech/substrate" }
 
 [build-dependencies]
-structopt = "0.3.15"
+structopt = { version = "0.3.15", optional = true }
 
 [features]
-default = []
+default = ["cli"]
 browser = ["wasm-bindgen"]
+cli = ["structopt"]
