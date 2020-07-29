@@ -8,9 +8,9 @@ use wasm_bindgen::prelude::*;
 
 pallet_staking_reward_curve::build! {
     const LPI_XRT: PiecewiseLinear<'static> = curve!(
-        min_inflation: 0_500_000,
-        max_inflation: 0_990_000,
-        ideal_stake: 0_800_000,
+        min_inflation: 0_150_000,
+        max_inflation: 0_250_000,
+        ideal_stake: 0_667_000,
         falloff: 0_050_000,
         max_piece_count: 1_000,
         test_precision: 0_005_000,
@@ -43,5 +43,5 @@ pub fn compute_total_payout(
 		total_tokens,
 	);
 	let maximum = portion * (LPI_XRT.maximum * total_tokens);
-	(payout * 100, maximum * 100)
+	(payout, maximum)
 }
